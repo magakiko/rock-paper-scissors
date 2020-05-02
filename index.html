@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Rock Paper Scissors</title>
+        <meta charset="utf-8">
+    </head>
+    <body></body>
+</html>
+<script>
+    function computerPlay() {
+        let arr = ["rock","paper","scissors"];
+        return arr[Math.floor(Math.random()*3)];
+    }
+    function playRound(playerSelection,computerSelection) {
+        switch(true) {
+            case playerSelection === "rock" && computerSelection === "rock":
+            
+            
+            return ["It is a draw no one wins", 0, 0];
+            break;
+            case playerSelection === "rock" && computerSelection === "paper":
+            
+            return ["You Lose! Paper beats Rock", 0, 1];
+            break;
+            case playerSelection === "rock" && computerSelection === "scissors":
+            
+            return ["You win! Rock beats Scissors", 1, 0];
+            break;
+            case playerSelection === "paper" && computerSelection === "rock":
+            
+            return ["You win! Paper beats Rock", 1, 0];
+            break;
+            case playerSelection === "paper" && computerSelection === "paper":
+            
+            return ["It is a draw no one wins", 0, 0];
+            break;
+            case playerSelection === "paper" && computerSelection === "scissors":
+            
+            return ["You Lose! Scissors beats Rock", 0, 1];
+            break;
+            case playerSelection === "scissors" && computerSelection === "rock":
+            
+            return ["You Lose! Rock beats Scissors", 0, 1];
+            break;
+            case playerSelection === "scissors" && computerSelection === "paper":
+            
+            return ["You win! Scissors beats Paper", 1, 0];
+            break;
+            case playerSelection === "scissors" && computerSelection === "scissors":
+            
+            return ["It is a draw no one wins", 0, 0];
+            break;
+        }
+        
+
+    }
+    let user = 0;
+    let pc = 0;
+    for(i = 1; i<6; i++) {
+        alert("round " + i);
+        let playerSelection =  prompt("Type rock, paper or scissors to play against the computer", '');
+        const computerSelection = computerPlay();
+        score = playRound(playerSelection, computerSelection);
+        user = user + score[1];
+        pc = pc + score[2];
+        alert('You selected ' + playerSelection + ' and the Computer selected ' + computerSelection + ' so\n' + score[0]);
+           
+    }
+    if (user > pc) {
+        alert("Congratulations you beat the computer you get " + user + " and it gets " + pc);
+    } else if (user < pc) {
+        alert("You Stupid loose against a machine you get " + user + " and it gets " + pc);
+    } else alert("It is a draw you have the same level of luck you get " + user + " and it gets " + pc);
+
+    
+</script>
