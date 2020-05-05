@@ -1,0 +1,1 @@
+This is my socond odin project and it is about the classic rock paper scissors game. So here the user get to choose an item and then wait for the computer to make its move which is totally random, after a few rounds of playing the screen will display the winner. 
